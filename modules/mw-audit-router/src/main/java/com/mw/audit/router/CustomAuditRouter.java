@@ -60,13 +60,14 @@ public class CustomAuditRouter implements AuditRouter {
 		
 		// MW START
 		String className = auditMessage.getClassName();
-
+		String eventType = auditMessage.getEventType();
+		
 		if (!Arrays.asList(allowedClasses).contains(className)) {
-			_log.info("Skipping " + className);
+			_log.info("Skipping " + className + ", " + eventType);
 			
 			return;
 		} else {
-			_log.info("Processing " + className);
+			_log.info("Processing " + className + ", " + eventType);
 		}
 		// MW END		
 
