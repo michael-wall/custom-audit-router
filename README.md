@@ -1,7 +1,6 @@
 **Introduction**
 - Use this proof of concept OSGi module to override the out of the box DefaultAuditRouter OSGi component to control the entities that are Audited in the environment.
-- Build and deploy the mw-audit-router
-- Blacklist Component 'com.liferay.portal.security.audit.router.internal.DefaultAuditRouter'
+- Build and deploy the com.mw.custom.audit.router-1.0.0.jar artifact
 - Classes that are not explicitly included will be excluded from being Audited e.g.
 ```
 [CustomAuditRouter:65] Skipping com.liferay.portal.kernel.model.User
@@ -13,7 +12,7 @@
 String[] allowedClasses = {DLFileEntry.class.getCanonicalName(), DLFolder.class.getCanonicalName()};
 ```
 - The logic could be changed to explicitly exclude certain classes rather than explicitly including certain classes.
-- The logic could also be made more complex e.g. to also include or exclude Audit records based on the Audit Message field values e.g. eventType or companyId etc.
+- The logic could also be made more complex e.g. to also include or exclude Audit records based on additional Audit Message field values e.g. eventType or companyId etc.
 - Move the configuration to custom System Settings.
 
 **Notes**

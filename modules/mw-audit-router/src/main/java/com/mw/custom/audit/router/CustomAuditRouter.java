@@ -1,4 +1,4 @@
-package com.mw.audit.router;
+package com.mw.custom.audit.router;
 
 import com.liferay.document.library.kernel.model.DLFileEntry;
 import com.liferay.document.library.kernel.model.DLFolder;
@@ -27,6 +27,9 @@ import org.osgi.service.component.annotations.Modified;
 
 @Component(
 	configurationPid = "com.liferay.portal.security.audit.configuration.AuditConfiguration",
+	property = {
+			"service.ranking:Integer=100" 
+	}, 
 	service = AuditRouter.class
 )
 public class CustomAuditRouter implements AuditRouter {
