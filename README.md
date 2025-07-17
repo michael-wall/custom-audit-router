@@ -1,6 +1,8 @@
 **Introduction**
 - Use this proof of concept OSGi module to override the out of the box DefaultAuditRouter OSGi component to control the entities that are Audited in the environment.
 - Build and deploy the com.mw.custom.audit.router-1.0.0.jar artifact
+- Blacklist Component: com.liferay.portal.security.audit.router.internal.DefaultAuditRouter
+	- See here for more details on Blacklisting Components: https://learn.liferay.com/w/dxp/security-and-administration/administration/installing-and-managing-apps/managing-apps/blacklisting-osgi-components
 - Classes that are not explicitly included will be excluded from being Audited e.g.
 ```
 [CustomAuditRouter:65] Skipping com.liferay.portal.kernel.model.User
